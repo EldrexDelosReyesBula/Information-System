@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Student Information Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #4a6fa5;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .back-btn {
+            position: absolute;
+            left: 20px;
+            color: white;
+background: #8BB0FF;
+padding: 10px 20px;
+border-radius: 50px;
+            font-size: 20px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .back-btn:hover {
+            color: white;
+background: #74FF8E;
+        }
+
+
+        .team {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .team h2 {
+            color: #4a6fa5;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .group{
+            background-color: #f9f9f9;
+            border-radius: 30px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .group h3 {
+            color: #3F8C4E;
+            margin-bottom: 15px;
+background: #B9FFB9;
+padding: 10px;
+border-radius: 40px;
+            text-align: center;
+        }
+
+        .member {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        .member:last-child {
+            border-bottom: none;
+        }
+
+        .member-name {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .member-role {
+            color: #666;
+            font-style: italic;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            .member {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .member-role {
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        About
+    </div>
+
+        <div class="team">
+            <h2>Development Team</h2>
+            
+            <div class="group">
+                <h3>Group 1</h3>
+                
+                <div class="member">
+                    <span class="member-name">Eldrex Delos Reyes Bula</span>
+                    <span class="member-role">Project Lead</span>
+                </div>
+                
+                <div class="member">
+                    <span class="member-name">Eldrex Delos Reyes Bula</span>
+                    <span class="member-role">UI/UX Design</span>
+                </div>
+                
+                <div class="member">
+                    <span class="member-name">Mark Angelo Bernales & Renzo Devilla </span>
+                    <span class="member-role">JS Logic Specialist</span>
+                </div>
+                
+                <div class="member">
+                    <span class="member-name">Marvin Abella</span>
+                    <span class="member-role">File Handling/Data Management</span>
+                </div>
+                
+                <div class="member">
+                    <span class="member-name">Jimwel Selvio</span>
+                    <span class="member-role">App Demonstrations</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2025 Student Information Manager | Group 1 Project
+    </div>
+</body>
+</html>
