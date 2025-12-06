@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #4a6fa5 0%, #6c8fc9 50%, #8aabd4 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .load {
+            text-align: center;
+            color: white;
+            width: 90%;
+            max-width: 500px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .img-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+            perspective: 1000px;
+        }
+
+        .img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+        }
+
+        .img.active {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1) rotate(0deg);
+            animation: funnyFloat 2s infinite ease-in-out;
+        }
+
+        .img.blur {
+            filter: blur(8px) drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+        }
+
+        .img.exit {
+            transform: translate(-50%, -50%) scale(0.5) rotate(360deg);
+            opacity: 0;
+        }
+
+        @keyframes funnyFloat {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1.1) rotate(0deg);
+            }
+            25% {
+                transform: translate(-50%, -55%) scale(1.15) rotate(5deg);
+            }
+            50% {
+                transform: translate(-50%, -45%) scale(1.05) rotate(-5deg);
+            }
+            75% {
+                transform: translate(-50%, -52%) scale(1.12) rotate(3deg);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: translate(-50%, -50%) scale(0.3) rotate(-180deg);
+                opacity: 0;
+            }
+            60% {
+                transform: translate(-50%, -50%) scale(1.2) rotate(10deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        .text-container {
+            position: relative;
+            min-height: 80px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .text {
+            font-size: 26px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(20px) scale(0.9);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+
+        .text.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            animation: textDance 1s infinite alternate;
+        }
+
+        .text.exit {
+            opacity: 0;
+            transform: translateY(-20px) scale(0.9);
+        }
+
+        @keyframes textDance {
+            0% {
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                transform: translateY(-5px) scale(1.03);
+            }
+        }
+
+        .bar-container {
+            position: relative;
+            width: 100%;
+            height: 12px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 10px;
+            margin: 25px auto;
+            overflow: hidden;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .bar-fill {
+            position: absolute;
+            height: 100%;
+            background: linear-gradient(90deg, #ffeb3b, #ff9800, #ff5722);
+            width: 0%;
+            border-radius: 10px;
+            animation: fillProgress 5s ease-in-out forwards, barShake 0.3s infinite alternate;
+            box-shadow: 0 0 20px rgba(255, 235, 59, 0.5);
+        }
+
+        @keyframes fillProgress {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes barShake {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(2px);
+            }
+        }
+
+        .note-container {
+            position: relative;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .note {
+            font-size: 16px;
+            opacity: 0.9;
+            font-style: italic;
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .note.active {
+            opacity: 0.9;
+            transform: translateX(0);
+            animation: noteWiggle 2s infinite;
+        }
+
+        .note.exit {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        @keyframes noteWiggle {
+            0%, 100% {
+                transform: translateX(0) rotate(0deg);
+            }
+            25% {
+                transform: translateX(2px) rotate(0.5deg);
+            }
+            75% {
+                transform: translateX(-2px) rotate(-0.5deg);
+            }
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ffeb3b;
+            opacity: 0;
+        }
+
+        @media (max-width: 600px) {
+            .img-container {
+                width: 170px;
+                height: 170px;
+            }
+            
+            .text {
+                font-size: 22px;
+            }
+            
+            .load {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="load">
+        <div class="img-container">
+            <!-- Image 1 -->
+            <img src="eldrex.png" class="img active" alt="Eldrex" data-index="0">
+            <!-- Image 2 -->
+            <img src="renzo.png" class="img" alt="Renzo" data-index="1">
+            <!-- Image 3 -->
+            <img src="mark.png" class="img" alt="Mark" data-index="2">
+            <!-- Image 4 - This one will be blurred -->
+            <img src="marvin.png" class="img blur" alt="Marvin" data-index="3">
+            <!-- Image 5 -->
+            <img src="jimwel.png" class="img" alt="Jimwel" data-index="4">
+        </div>
+        
+        <div class="text-container">
+            <div class="text active" id="text">Round up the students...</div>
+        </div>
+        
+        <div class="bar-container">
+            <div class="bar-fill"></div>
+        </div>
+        
+        <div class="note-container">
+            <div class="note active" id="note">Finding lost pencils...</div>
+        </div>
+    </div>
+
+    <script>
+        let textContainer = document.querySelector('.text-container');
+        let noteContainer = document.querySelector('.note-container');
+        let images = document.querySelectorAll('.img');
+        let currentImageIndex = 0;
+        
+        let lines = [
+            "Roll calling...",
+            "Checking attendance...",
+            "Sharpening pencils...",
+            "Passing notes...",
+            "Erasing mistakes...",
+            "Stacking books...",
+            "Finding chairs...",
+            "Opening windows...",
+            "Cleaning board...",
+            "Ready! 🎉"
+        ];
+        
+        let notes = [
+            "One fell asleep... 😴",
+            "Someone forgot their bag... 🎒",
+            "Finding lost pencils... ✏️",
+            "Bell is about to ring... 🔔",
+            "Teacher is coming... 👩‍🏫",
+            "Homework missing... 📚",
+            "Lunchbox opened... 🍱",
+            "Shoes untied... 👟"
+        ];
+        
+        let i = 0;
+        let n = 0;
+        
+        // Function to cycle through images
+        function cycleImages() {
+            // Remove active class from current image with exit animation
+            let currentActive = document.querySelector('.img.active');
+            if (currentActive) {
+                currentActive.classList.add('exit');
+                setTimeout(() => {
+                    currentActive.classList.remove('active', 'exit');
+                }, 300);
+            }
+            
+            // Add active class to next image with bounce animation
+            setTimeout(() => {
+                images[currentImageIndex].classList.add('active');
+                images[currentImageIndex].style.animation = 'bounceIn 0.6s ease-out';
+                
+                // Remove bounce animation after it plays
+                setTimeout(() => {
+                    images[currentImageIndex].style.animation = '';
+                }, 600);
+            }, 300);
+            
+            // Move to next image
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+        }
+        
+        // Function to change text with smooth transition
+        function changeText() {
+            let currentText = textContainer.querySelector('.text.active');
+            if (currentText) {
+                currentText.classList.add('exit');
+                setTimeout(() => {
+                    currentText.classList.remove('active', 'exit');
+                    currentText.textContent = lines[i];
+                    currentText.classList.add('active');
+                    i = (i + 1) % lines.length;
+                }, 250);
+            }
+        }
+        
+        // Function to change note with smooth transition
+        function changeNote() {
+            let currentNote = noteContainer.querySelector('.note.active');
+            if (currentNote) {
+                currentNote.classList.add('exit');
+                setTimeout(() => {
+                    currentNote.classList.remove('active', 'exit');
+                    currentNote.textContent = notes[n];
+                    currentNote.classList.add('active');
+                    n = (n + 1) % notes.length;
+                }, 250);
+            }
+        }
+        
+        // Create confetti effect
+        function createConfetti() {
+            const colors = ['#ffeb3b', '#4CAF50', '#2196F3', '#E91E63', '#9C27B0'];
+            for (let j = 0; j < 20; j++) {
+                let confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = '-10px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                document.body.appendChild(confetti);
+                
+                // Animate confetti
+                let animation = confetti.animate([
+                    { top: '-10px', opacity: 0, transform: 'scale(0)' },
+                    { top: '10%', opacity: 1, transform: 'scale(1)' },
+                    { top: '100vh', opacity: 0, transform: 'scale(0.5)' }
+                ], {
+                    duration: 2000 + Math.random() * 2000,
+                    easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
+                });
+                
+                animation.onfinish = () => confetti.remove();
+            }
+        }
+        
+        // Start image cycling (every 1.2 seconds to match text changes)
+        setInterval(cycleImages, 1200);
+        
+        // Change text
+        setInterval(changeText, 1200);
+        
+        // Change note
+        setInterval(changeNote, 1200);
+        
+        // Create confetti occasionally
+        setInterval(createConfetti, 3000);
+        
+        // Final redirect with celebration
+        setTimeout(() => {
+            // Big confetti burst
+            for(let k = 0; k < 50; k++) {
+                setTimeout(() => createConfetti(), k * 50);
+            }
+            
+            // Redirect after celebration
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 2000);
+        }, 7000);
+    </script>
+</body>
+</html>
