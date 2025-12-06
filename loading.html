@@ -357,32 +357,6 @@
             }
         }
         
-        // Create confetti effect
-        function createConfetti() {
-            const colors = ['#ffeb3b', '#4CAF50', '#2196F3', '#E91E63', '#9C27B0'];
-            for (let j = 0; j < 20; j++) {
-                let confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.top = '-10px';
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
-                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
-                document.body.appendChild(confetti);
-                
-                // Animate confetti
-                let animation = confetti.animate([
-                    { top: '-10px', opacity: 0, transform: 'scale(0)' },
-                    { top: '10%', opacity: 1, transform: 'scale(1)' },
-                    { top: '100vh', opacity: 0, transform: 'scale(0.5)' }
-                ], {
-                    duration: 2000 + Math.random() * 2000,
-                    easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
-                });
-                
-                animation.onfinish = () => confetti.remove();
-            }
-        }
         
         // Start image cycling (every 1.2 seconds to match text changes)
         setInterval(cycleImages, 1200);
@@ -392,9 +366,6 @@
         
         // Change note
         setInterval(changeNote, 1200);
-        
-        // Create confetti occasionally
-        setInterval(createConfetti, 3000);
         
         // Final redirect with celebration
         setTimeout(() => {
