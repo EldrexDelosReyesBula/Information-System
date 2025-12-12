@@ -1,6 +1,5 @@
 ![Listah Logo](assets/LISTAH.jpg)
 
-# **Information System Project**  
 ### *Student Information Manager*  
 ### **Computer Programming**
 
@@ -12,6 +11,11 @@
 - **Renzo Devilla**  
 - **Marvin Abella**  
 - **Jimwel Selvio**
+
+---
+
+## **Professor**
+- **Ervin Garcia**  
 
 ---
 
