@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listah</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #4a6fa5;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #4a6fa5;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            color: #555;
+        }
+
+        ul {
+            margin-bottom: 15px;
+            margin-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 2px 5px;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+
+        .role {
+            background-color: #e1f0ff;
+            padding: 10px;
+            border-left: 5px solid #4a6fa5;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="header">Listah – Student Information Manager</div>
+
+<div class="container">
+    <div class="role">
+        <h3>1. Project Lead & UI/UX Designer</h3>
+<i>Bula, Eldrex Delos Reyes</i><br>
+        <ul>
+            <li>Responsible sa buong project flow at visual design ng app.</li>
+            <li>Create ng layout, structure, color scheme, buttons, modal forms, at empty state design.</li>
+            <li>Ginamit ang CSS Flexbox at Media Queries para maging responsive.</li>
+            <li>Empty state animation sa image para maging attractive at engaging sa user.</li>
+            <li>Ensure na user-friendly ang flow: Add → Fill Form → Save → List Update → Delete option.</li>
+        </ul>
+    </div>
+
+    <div class="role">
+        <h3>2. JS Logic Specialist</h3>
+<i>Renzo Devilla and Mark Angelo Bernales</i><br>
+        <ul>
+            <li>Responsible sa lahat ng JavaScript na nagpapatakbo ng features ng web app: <code>load()</code>, <code>save()</code>,
+                <code>show()</code>, <code>add()</code>, at <code>remove()</code>.</li>
+            <li><strong>load()</strong> – naglo-load ng saved data mula sa browser localStorage at nagpa-populate sa page.
+                <ul>
+                    <li> A JSON.parse convert a string data to JS object/array.</li>
+                </ul>
+            </li>
+            <li><strong>save()</strong> – sine-save ang data array sa <code>localStorage</code> para hindi mawala kapag
+                nireload ang page.
+                <ul>
+                    <li>At ang JSON.stringify naman ay para mai-convert ang array to string bago i-save.</li>
+                </ul>
+            </li>
+            <li><strong>show()</strong> – nagdi-display ng students sa webpage; naglo-loop sa data array at gumagawa ng
+                student div para sa bawat entry.
+                <ul>
+                    <li>Tip: Check for empty array to show empty state (image + message).</li>
+                </ul>
+            </li>
+            <li><strong>add()</strong> – nag-a-add ng new student sa data array at sine-save sa localStorage.
+                <ul>
+                    <li>Tip: Always validate inputs (no blank values).</li>
+                </ul>
+            </li>
+            <li><strong>remove(index)</strong> – ito naman yung nagde-delete ng selected student at nag-a-update ng storage.
+                <ul>
+                    <li>Tip: Use array.splice(index, 1) para tanggalin sa array yung student.</li>
+                </ul>
+            </li>
+            <li>Focus sa array manipulation (<code>push</code>, <code>splice</code>), loops, conditional statements, at localStorage operations.</li>
+        </ul>
+    </div>
+
+    <div class="role">
+        <h3>3. File Handling / Data Management Specialist</h3>
+<i>Marvin Abella</i><br>
+        <ul>
+            <li>Responsible sa pag-save at pag-load ng data gamit <code>localStorage</code>.</li>
+            <li>Ginagamit ang JSON methods: <code>JSON.stringify</code> at <code>JSON.parse</code>.</li>
+            <li>Maintain proper structure ng <code>data</code> array para consistent ang storage at display.</li>
+            <li>Practice: Test adding, deleting, and loading data to see if persistent ang storage.</li>
+            <li>Tip: Understand na localStorage works per browser; closing browser does not erase data.</li>
+        </ul>
+    </div>
+
+    <div class="role">
+        <h3>4. Demonstrations for Presentation</h3>
+<i>Jimwel Selvio</i><br>
+        <ul>
+            <li>Opening the app → empty state shows animated image and message. Explain purpose of empty state.</li>
+            <li>Adding a student → modal form opens → enter name/year/section → Save → student appears in list.</li>
+            <li>Deleting a student → click Delete → confirm → student disappears. Explain array.splice and data update.</li>
+            <li>Data Persistence → reload page → students remain visible (localStorage working).</li>
+            <li>Explain step-by-step data flow: Form input → Add function → Update array → Save to localStorage → Show list.</li>
+        </ul>
+    </div>
+
+    <div class="role">
+        <h3>5. Step-by-Step Process & Important Notes</h3>
+        <ul>
+            <li>Project Lead/UI-UX: Design layout, buttons, modal, empty state, responsive behavior.</li>
+            <li>JS Logic Specialist: Handle logic for add, delete, show, save, load. Understand array manipulation and DOM updates.</li>
+            <li>Data Management: Ensure data is correctly saved and loaded using localStorage and JSON methods.</li>
+            <li>Demonstrations: Show empty state, adding, deleting, persistence, responsiveness, and explain background process.</li>
+    </div>
+</div>
+</body>
+
+</html>
