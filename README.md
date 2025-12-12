@@ -1,13 +1,8 @@
 ![Listah Logo](assets/LISTAH.jpg)
-<a href="https://eldrexdelosreyesbula.github.io/Information-System/index.html" target="_blank" style="text-decoration: none;">
-  <span style="display: inline-block; padding: 10px 20px; background-color: #4a6fa5; color: white; border-radius: 25px; font-weight: bold;">
-    View Live Project
-  </span>
-</a>
 
 # **Listah**  
 ### *Student Information Manager*  
-### *Computer Programming 1 Project*
+#### *Computer Programming 1 Project*
 
 ---
 
@@ -16,9 +11,9 @@
 
 ---
 
-## **Group 1 – Listah**
-| Member | Role |
-|--------|------|
+## **Team – Group 1: Listah**
+| **Member** | **Role** |
+|------------|----------|
 | **Eldtex Delos Reyes Bula** | Project Lead & UI/UX Design |
 | **Mark Angelo Bernales** | JavaScript Logic Specialist |
 | **Renzo Devilla** | JavaScript Logic Specialist |
@@ -28,31 +23,40 @@
 ---
 
 ## **Project Overview**  
-**Listah** is a modern and intuitive student information manager designed to efficiently **organize, manage, and track student records**. With a focus on **simplicity, reliability, and user-friendly design**, it allows users to easily add, view, and maintain student information. The system features **interactive visuals**, an **animated empty state**, and a **fully responsive layout** for smooth operation across all devices.
+**Listah** is a modern, intuitive, and fully responsive student information manager designed to **efficiently organize, manage, and track student records**. It prioritizes **simplicity, reliability, and user-friendly design**, allowing users to easily add, view, edit, and maintain student information. Key features include **interactive visuals**, an **animated empty state**, and a **clean, modern interface** that works seamlessly across all devices.
 
 ---
 
-## **Key Features**  
+## **Key Features**
 
 ### **Student Management**
 - Add new student records with **Name**, **Year**, and **Section**  
-- Edit or update student information easily  
-- Delete student entries with a single click  
+- Edit or update student information with ease  
+- Delete student entries instantly  
 
 ### **User Experience**
 - **Dynamic student list** with real-time updates  
-- **Interactive empty state** with animations for engagement  
-- Smooth, clean, and **modern interface**  
+- **Animated empty state** for engagement and visual feedback  
+- Clean, modern, and intuitive interface  
 
 ### **Data Handling**
-- **Local storage integration** for persistent data  
-- Optimized for **offline use**  
+- **Persistent local storage** ensures data is saved even offline  
+- Optimized for offline use and smooth performance  
 
 ### **Design & Responsiveness**
-- **Responsive layout** for desktops, tablets, and mobile devices  
-- Modern typography and color palette for readability and aesthetics  
-- Intuitive button placement and form design for seamless interaction  
+- Fully **responsive layout** for desktop, tablet, and mobile devices  
+- Thoughtful **typography and color palette** for readability and aesthetics  
+- Intuitive **button placement and form design** for seamless interaction  
 
 ---
 
-> **Listah** combines functionality and aesthetics to make managing student records **simple, engaging, and efficient**.
+## **Live Project**  
+<a href="https://eldrexdelosreyesbula.github.io/Information-System/index.html" target="_blank" style="text-decoration: none;">
+  <span style="display: inline-block; padding: 10px 20px; background-color: #4a6fa5; color: white; border-radius: 25px; font-weight: bold; font-size: 16px;">
+    View Live Project
+  </span>
+</a>
+
+---
+
+> **Listah** combines functionality and aesthetics to make managing student records **simple, engaging, and efficient**, providing a modern solution for student information management.
