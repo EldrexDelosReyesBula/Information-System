@@ -20,13 +20,14 @@
 ---
 
 ### **Project Overview**
-Listah is a student information manager designed to organize, manage, and track student records efficiently. It focuses on simplicity, reliability, and user-friendly.
+Listah is a modern student information manager built to efficiently organize, manage, and track student records. It emphasizes simplicity, reliability, and a highly user-friendly experience, making it easy for anyone to add, view, and maintain student information seamlessly. The system also includes interactive visuals and responsive design to ensure smooth operation across all devices.
 
 ---
 
 ### **Key Features**
-- Student profile creation  
-- Data update and management  
-- Record search and filtering  
-- Local storage integration  
-- Clean and modern interface  
+- Add new student records with name, year, and section  
+- View a dynamic student list with automatic updates  
+- Delete existing student entries instantly  
+- Local storage saving for persistent data  
+- Animated empty state with interactive visuals  
+- Modern layout with responsive design for all devices
