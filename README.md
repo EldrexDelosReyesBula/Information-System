@@ -11,7 +11,8 @@
 ---
 
 ## **Group 1 – Listah**
-- **Eldtex Delos Reyes Bula**  
+- **Eldtex Delos Reyes Bula** 
+*Project lead and UI/UX design*
 - **Mark Angelo Bernales**  
 - **Renzo Devilla**  
 - **Marvin Abella**  
