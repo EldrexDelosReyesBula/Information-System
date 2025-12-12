@@ -31,7 +31,6 @@
 
 ### **Student Management**
 - Add new student records with **Name**, **Year**, and **Section**  
-- Edit or update student information with ease  
 - Delete student entries instantly  
 
 ### **User Experience**
