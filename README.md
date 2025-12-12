@@ -11,7 +11,7 @@
 
 ---
 
-## **Team – Group 1: Listah**
+## **Group 1: Listah**
 | **Member** | **Role** |
 |------------|----------|
 | **Eldtex Delos Reyes Bula** | Project Lead & UI/UX Design |
