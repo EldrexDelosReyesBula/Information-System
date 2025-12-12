@@ -26,7 +26,7 @@
                 box.className = "empty-message";
 
                 let img = document.createElement("img");
-                img.src = "empty.png";
+                img.src = "../assets/empty.png";
                 img.className = "empty-image";
 
                 let msg1 = document.createElement("p");
@@ -140,4 +140,3 @@
 
             document.getElementById("cancelBtn").onclick = hideForm;
         };
-
